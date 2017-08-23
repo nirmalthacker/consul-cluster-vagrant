@@ -32,7 +32,7 @@ apt-get install daemon
 #==================================================
 echo "Installing Consul"
 cp /vagrant/bin/consul /usr/local/bin/
-daemon -X "consul agent -server -data-dir /tmp/consul -node=consul2 -bind 172.20.20.11 -join 172.20.20.10" 
+daemon -X "consul agent -server -ui -data-dir /tmp/consul -node=consul2 -bind 172.20.20.11 -client=172.20.20.11 -join 172.20.20.10"
 
 SCRIPT
       consul2.vm.provision "shell", inline: $script
